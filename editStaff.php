@@ -2,6 +2,7 @@
 
 function renderForm($id, $name, $error)
 {
+    $fk = $_GET["fk"]
 
     ?>
 
@@ -11,7 +12,7 @@ function renderForm($id, $name, $error)
 
 <head>
 
-<title>Edit Department</title>
+<title>Edit Staffs</title>
 
 </head>
 
@@ -36,7 +37,7 @@ function renderForm($id, $name, $error)
 <div>
 
 <p><strong>ID:</strong> <?php echo $id; ?></p>
-
+<input type="hidden" name="fk" value="<?php echo $fk; ?>"/>
 <strong>Name: *</strong> <input type="text" name="name" value="<?php echo $name; ?>"/><br/>
 
 <input type="submit" name="submit" value="Submit">
@@ -60,7 +61,7 @@ if (isset($_POST['submit'])) {
     if (is_numeric($_POST['id'])) {
 
         $id = $_POST['id'];
-
+        $fk = $_POST['fk'];
         $name = mysql_real_escape_string(htmlspecialchars($_POST['name']));
 
         if ($name == '') {

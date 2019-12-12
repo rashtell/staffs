@@ -32,7 +32,7 @@ while ($row = mysql_fetch_array($result)) {
 
     echo '<td>' . $row['name'] . '</td>';
 
-    echo '<td><a href="editStaff.php?id=' . $row['id'] . '">Edit</a></td>';
+    echo '<td><a href="editStaff.php?id=' . $row['id'] . '&fk=' . $fk . '">Edit</a></td>';
 
     echo '<td><a href="deleteStaff.php?id=' . $row['id'] . '">Delete</a></td>';
 

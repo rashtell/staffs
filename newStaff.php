@@ -1,6 +1,8 @@
-<?php
 
-function renderForm($name, $fk,$error)
+<?php
+//toheeb@mooreadvice.com
+
+function renderForm($name, $fk, $error)
 {
 
     ?>
@@ -55,6 +57,7 @@ include 'connect-db.php';
 
 if (isset($_POST['submit'])) {
 
+    $fk = mysql_real_escape_string(htmlspecialchars($_POST['fk']));
     $name = mysql_real_escape_string(htmlspecialchars($_POST['name']));
 
     if ($name == '') {
@@ -65,11 +68,11 @@ if (isset($_POST['submit'])) {
 
     } else {
 
-        mysql_query("INSERT staffs SET name='$name'")
+        mysql_query("INSERT staffs SET name='$name', fk='$fk'")
 
         or die(mysql_error());
 
-        header("Location: view.php");
+        header("Location: staff.php");
 
     }
 

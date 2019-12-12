@@ -6,7 +6,7 @@ $user = 'root';
 
 $pass = 'root';
 
-$db = 'departments';
+$db = 'stafflist';
 
 // Connect to Database
 

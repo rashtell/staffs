@@ -6,7 +6,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
     $id = $_GET['id'];
 
-    $result = mysql_query("DELETE FROM departments WHERE id=$id")
+    $result = mysql_query("DELETE FROM staffs WHERE id=$id")
 
     or die(mysql_error());
 
